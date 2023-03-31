@@ -5,6 +5,8 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Select from 'react-select';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Register = () => {
@@ -44,6 +46,47 @@ const Register = () => {
     setImage(e.target.files[0]);
   }
 
+  // submit user data
+  const submitUserData = async (e) => {
+    e.preventDefault();
+    const { fname, lname, email, mobile, gender, location } = inputData;
+    if (fname === "") {
+      toast.error("First name is required!",)
+    }
+    else if (lname === "") {
+      toast.error("Last name is required!")
+    }
+    else if (email === "") {
+      toast.error("Enter email address!")
+    }
+    else if (!email.includes("@")) {
+      toast.error("Enter valid email!")
+    }
+    else if (mobile === "") {
+      toast.error("Mobile number is required!")
+    }
+    else if (mobile.length > 10 || mobile.length < 10) {
+      toast.error("Enter 10 digits mobile number!")
+    }
+    else if (gender === "") {
+      toast.error("Gender is required!")
+    }
+    else if (location === "") {
+      toast.error("Location is required!")
+    }
+    else {
+      const data = new FormData();
+      data.append("fname", fname)
+      data.append("lname", lname)
+      data.append("email", email)
+      data.append("mobile", mobile)
+      data.append("gender", gender)
+      data.append("status", status)
+      data.append("user_profile", image)
+      data.append("location", location)
+    }
+  }
+
   useEffect(() => {
     if (image) {
       setPreviewImage(URL.createObjectURL(image));
@@ -53,28 +96,29 @@ const Register = () => {
 
   return (
     <div className="register">
+
       <h2 className='text-center mt-1'>Register Details</h2>
       <Card className='shadow mt-3 p-3'>
         <div className="profile_div text-center">
-          <img src={ previewImage ? previewImage : "/selfie.png" } alt="img" />
+          <img src={previewImage ? previewImage : "/selfie.png"} alt="img" />
         </div>
         <Form>
           <Row>
             <Form.Group className="mb-3 col-lg-6" controlId="formBasicEmail">
               <Form.Label>First name</Form.Label>
-              <Form.Control type="text" name='fname' onChange={setInputValue} placeholder="Enter first name" />
+              <Form.Control type="text" name='fname' value={inputData.fname} onChange={setInputValue} placeholder="Enter first name" />
             </Form.Group>
             <Form.Group className="mb-3 col-lg-6" controlId="formBasicEmail">
               <Form.Label>Last name</Form.Label>
-              <Form.Control type="text" name='lname' onChange={setInputValue} placeholder="Enter last name" />
+              <Form.Control type="text" name='lname' value={inputData.lname} onChange={setInputValue} placeholder="Enter last name" />
             </Form.Group>
             <Form.Group className="mb-3 col-lg-6" controlId="formBasicEmail">
               <Form.Label>Email address</Form.Label>
-              <Form.Control type="email" name='email' onChange={setInputValue} placeholder="Enter email" />
+              <Form.Control type="email" name='email' value={inputData.email} onChange={setInputValue} placeholder="Enter email" />
             </Form.Group>
             <Form.Group className="mb-3 col-lg-6" controlId="formBasicEmail">
               <Form.Label>Mobile number</Form.Label>
-              <Form.Control type="text" name='mobile' onChange={setInputValue} placeholder="Enter mobile" />
+              <Form.Control type="text" name='mobile' value={inputData.mobile} onChange={setInputValue} placeholder="Enter mobile" />
             </Form.Group>
             <Form.Group className="mb-3 col-lg-6" controlId="formBasicEmail">
               <Form.Label>Select Gender</Form.Label>
@@ -106,14 +150,15 @@ const Register = () => {
             </Form.Group>
             <Form.Group className="mb-3 col-lg-6" controlId="formBasicEmail">
               <Form.Label>Enter location</Form.Label>
-              <Form.Control type="text" name='location' onChange={setInputValue} placeholder="Enter location" />
+              <Form.Control type="text" name='location' value={inputData.location} onChange={setInputValue} placeholder="Enter location" />
             </Form.Group>
-            <Button variant="primary" type="submit">
+            <Button variant="primary" type="submit" onClick={submitUserData}>
               Submit
             </Button>
           </Row>
         </Form>
       </Card>
+      <ToastContainer position="top-center" />
     </div>
   )
 }
