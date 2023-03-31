@@ -8,6 +8,17 @@ import Select from 'react-select';
 
 
 const Register = () => {
+  const [inputData, seInputData] = useState({
+    fname : "",
+    lname : "",
+    email: "",
+    mobile: "",
+    gender: "",
+    location: ""
+  });
+  const [status, setStatus] = useState("Active");
+  const [image, setImage] = useState("");
+  
   // status options
   const options = [
     { value: 'Active', label: 'Active' },
@@ -29,7 +40,7 @@ const Register = () => {
             </Form.Group>
             <Form.Group className="mb-3 col-lg-6" controlId="formBasicEmail">
               <Form.Label>Last name</Form.Label>
-              <Form.Control type="text" name='fname' placeholder="Enter last name" />
+              <Form.Control type="text" name='lname' placeholder="Enter last name" />
             </Form.Group>
             <Form.Group className="mb-3 col-lg-6" controlId="formBasicEmail">
               <Form.Label>Email address</Form.Label>
@@ -37,7 +48,7 @@ const Register = () => {
             </Form.Group>
             <Form.Group className="mb-3 col-lg-6" controlId="formBasicEmail">
               <Form.Label>Mobile number</Form.Label>
-              <Form.Control type="text" placeholder="Enter mobile" />
+              <Form.Control type="text" name='mobile' placeholder="Enter mobile" />
             </Form.Group>
             <Form.Group className="mb-3 col-lg-6" controlId="formBasicEmail">
               <Form.Label>Select Gender</Form.Label>
@@ -56,6 +67,7 @@ const Register = () => {
             </Form.Group>
             <Form.Group className="mb-3 col-lg-6" controlId="formBasicEmail">
               <Form.Label>User status</Form.Label>
+              
               <Select
                 options={options}
               />
