@@ -1,8 +1,18 @@
 .register {
     text-align: left;
+    color: rgb(17, 76, 187);
+    font-weight: 500;
+    font-size: 160%;
+    
 }
 .profile_div img{
-    max-width: 56px;
+    max-width: 85px;
     border-radius: 50%;
-    border: 1px solid #111;
+    border: 2px solid crimson;
+    padding: 3px;
+   
+}
+Button {
+    background-color: crimson !important;
+    border: crimson !important;
 }
