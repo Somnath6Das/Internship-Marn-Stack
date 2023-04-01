@@ -1,0 +1,18 @@
+.edit {
+    text-align: left;
+    color: rgb(17, 76, 187);
+    font-weight: 500;
+    font-size: 110%;
+    
+}
+.profile_div img{
+    max-width: 85px;
+    border-radius: 50%;
+    border: 2px solid crimson;
+    padding: 3px;
+   
+}
+Button {
+    background-color: crimson !important;
+    border: crimson !important;
+}

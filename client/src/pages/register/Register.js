@@ -3,7 +3,7 @@ import "./register.css";
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import Row from 'react-bootstrap/Row';
+import Row from 'react-bootstrap/esm/Row';
 import Select from 'react-select';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -75,15 +75,8 @@ const Register = () => {
       toast.error("Location is required!")
     }
     else {
-      const data = new FormData();
-      data.append("fname", fname)
-      data.append("lname", lname)
-      data.append("email", email)
-      data.append("mobile", mobile)
-      data.append("gender", gender)
-      data.append("status", status)
-      data.append("user_profile", image)
-      data.append("location", location)
+      toast.success("Data Submitted!");
+
     }
   }
 
@@ -122,26 +115,27 @@ const Register = () => {
             </Form.Group>
             <Form.Group className="mb-3 col-lg-6" controlId="formBasicEmail">
               <Form.Label>Select Gender</Form.Label>
-              <Form.Check
-                type={'radio'}
-                label={`Male`}
-                name="gender"
-                value={"Male"}
-                onChange={setInputValue}
-              />
-              <Form.Check
-                type={'radio'}
-                label={`Female`}
-                name="gender"
-                value={"Female"}
-                onChange={setInputValue}
-              />
+           
+                <Form.Check
+                  type={'radio'}
+                  label={`Male`}
+                  name="gender"
+                  value={"Male"}
+                  onChange={setInputValue}
+                />
+                <Form.Check
+                  type={'radio'}
+                  label={`Female`}
+                  name="gender"
+                  value={"Female"}
+                  onChange={setInputValue}
+                />
             </Form.Group>
             <Form.Group className="mb-3 col-lg-6" controlId="formBasicEmail">
               <Form.Label>User status</Form.Label>
 
               <Select
-                options={options} onChange={setStatusValue}
+                options={options} value={status} onChange={setStatusValue}
               />
             </Form.Group>
             <Form.Group className="mb-3 col-lg-6" controlId="formBasicEmail">
@@ -153,7 +147,7 @@ const Register = () => {
               <Form.Control type="text" name='location' value={inputData.location} onChange={setInputValue} placeholder="Enter location" />
             </Form.Group>
             <Button variant="primary" type="submit" onClick={submitUserData}>
-              Submit
+              SUBMIT
             </Button>
           </Row>
         </Form>
