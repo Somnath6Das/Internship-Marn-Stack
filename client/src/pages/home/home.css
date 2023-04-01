@@ -1,0 +1,20 @@
+Button {
+    color: white !important;
+}
+.add_btn Button{
+    margin-right: 150px;
+}
+.add_btn i {
+    font-size: 14px;
+}
+.export_csv {
+    margin-left: 124px;
+}
+.export_csv i{
+    font-size: 18px;
+}
+.filter {
+    margin-right: 800px;
+    font-size: 15px;
+    color: rgb(17, 76, 187);
+}

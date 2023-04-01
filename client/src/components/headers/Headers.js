@@ -8,9 +8,9 @@ const Headers = () => {
     <div className="headers">
       <Navbar bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand href="/">Home</Navbar.Brand>
+          <Navbar.Brand href="/"><i style={{fontSize: '15px'}} class="fa-solid fa-house-user"></i>&nbsp;<span>Home</span></Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="/register">Register</Nav.Link>        
+            {/* <Nav.Link href="/register">Register</Nav.Link>         */}
           </Nav>
         </Container>
       </Navbar>
