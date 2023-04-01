@@ -14,7 +14,6 @@ const Profile = () => {
               <div className='col'>
                 <div className='card-profile-state d-flex justify-content-center'>
                   <img src="/selfie.png" alt="" />
-
                 </div>
               </div>
             </Row>
