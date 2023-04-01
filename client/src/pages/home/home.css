@@ -1,20 +1,32 @@
 Button {
-    color: white !important;
+  color: white !important;
 }
-.add_btn Button{
-    margin-right: 150px;
+.add_btn Button {
+  margin-right: 40px;
+  background-color: rgb(18, 161, 18) !important;
+  margin-right: 124px;
 }
 .add_btn i {
-    font-size: 14px;
+  font-size: 14px;
 }
-.export_csv {
+.filter_new_old {
     margin-left: 124px;
+  background-color: rgb(17, 76, 187) !important;
 }
-.export_csv i{
-    font-size: 18px;
+.menu {
+  color: rgb(17, 76, 187) !important;
 }
 .filter {
-    margin-right: 800px;
-    font-size: 15px;
-    color: rgb(17, 76, 187);
+  font-size: 15px;
+  color: rgb(17, 76, 187);
+}
+.export_btn {
+  background-color: rgb(17, 76, 187) !important;
+}
+.export_csv {
+    margin-right: 124px;
+}
+.export_csv i {
+  font-size: 18px;
+  
 }
