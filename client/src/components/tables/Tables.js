@@ -3,6 +3,8 @@ import './table.css';
 import Row from 'react-bootstrap/Row';
 import Card from 'react-bootstrap/Card';
 import Table from 'react-bootstrap/Table';
+import Dropdown from 'react-bootstrap/Dropdown';
+import { Badge } from 'react-bootstrap';
 
 const Tables = () => {
   return (
@@ -13,7 +15,7 @@ const Tables = () => {
             <Card className='shadow'>
               <Table className='align-align-items-center' responsive="sm">
                 <thead className='thead-dark'>
-                  <tr className="table">
+                  <tr className="table" id='table1'>
                     <th>ID</th>
                     <th>Full Name</th>
                     <th>Email adress</th>
@@ -30,10 +32,32 @@ const Tables = () => {
                     <td>somnath8das@gmail.com</td>
                     <td>M</td>
                     <td className='d-flex align-items-center'>
-                      {/* Drop down */}
+                      <Dropdown >
+                        <Dropdown.Toggle className="filter_new_old" id="dropdown-basic">
+                          <Badge id="badge">
+                            Active&nbsp;<i class="fa-sharp fa-solid fa-angle-down"></i>
+                          </Badge>
+
+                        </Dropdown.Toggle>
+                        <Dropdown.Menu>
+                          <Dropdown.Item className='menu'>Active</Dropdown.Item>
+                          <Dropdown.Item className='menu'>Inactive</Dropdown.Item>
+                        </Dropdown.Menu>
+                      </Dropdown>
                     </td>
-                    <td></td>
-                    <td></td>
+                    <td className='img_parent'>
+                      <img src="/selfie.png" style={{ width: "40px" }} alt="" />
+                    </td>
+                    <Dropdown >
+                        <Dropdown.Toggle id="more">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </Dropdown.Toggle>
+                        <Dropdown.Menu>
+                          <Dropdown.Item >Active</Dropdown.Item>
+                          <Dropdown.Item >Inactive</Dropdown.Item>
+                        </Dropdown.Menu>
+                      </Dropdown>
+                  
                   </tr>
                 </tbody>
               </Table>

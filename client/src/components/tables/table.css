@@ -1,10 +1,40 @@
 .container {margin-top: 20px;}
 
-.table {
-    background-color:  rgb(223, 62, 94);
+#table1 {
+    color: crimson;
     font-size: 18px;
+    font-weight: 200;
 }
 .tbody {
     background-color: white;
     color: black;
+}
+#dropdown-basic {
+    background-color: white !important;
+    
+}
+#three_dot{
+    background-color: white !important;
+}
+#badge {
+    color: white;
+    font-size: 17px;
+    font-weight: 200;
+}
+#badge i {
+    font-size: 15px;
+}
+#three {
+    background-color: white;
+    
+}
+#more {
+    background-color: white !important;
+    color: black !important;
+    font-size: 17px;
+    font-weight: 200;
+}
+#more i {
+   
+    font-size: 20px;
 }
