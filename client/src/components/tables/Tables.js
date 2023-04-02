@@ -49,12 +49,14 @@ const Tables = () => {
                       <img src="/selfie.png" style={{ width: "40px" }} alt="" />
                     </td>
                     <Dropdown >
-                        <Dropdown.Toggle id="more">
-                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        <Dropdown.Toggle id="dropdown-basic">
+                          
+                             <i class="fa-solid fa-ellipsis-vertical"></i>
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
-                          <Dropdown.Item >Active</Dropdown.Item>
-                          <Dropdown.Item >Inactive</Dropdown.Item>
+                          <Dropdown.Item >View</Dropdown.Item>
+                          <Dropdown.Item >Profile</Dropdown.Item>
+                          <Dropdown.Item >Delete</Dropdown.Item>
                         </Dropdown.Menu>
                       </Dropdown>
                   

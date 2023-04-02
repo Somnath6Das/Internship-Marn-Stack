@@ -11,8 +11,12 @@
 }
 #dropdown-basic {
     background-color: white !important;
+    color: black !important;
     
 }
+.dropdown-toggle::after {
+    display: none !important; 
+  }
 #three_dot{
     background-color: white !important;
 }
