@@ -140,7 +140,7 @@ const Edit = () => {
               <Form.Control type="file" onChange={setProfile} name='user_profile' placeholder="Select picture" />
             </Form.Group>
             <Form.Group className="mb-3 col-lg-6" controlId="formBasicEmail">
-              <Form.Label>Enter location</Form.Label>
+              <Form.Label>Enter Address</Form.Label>
               <Form.Control type="text" name='location' value={inputData.location} onChange={setInputValue} placeholder="Enter location" />
             </Form.Group>
             <Button variant="primary" type="submit" onClick={submitUserData}>

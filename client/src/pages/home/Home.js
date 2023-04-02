@@ -3,9 +3,15 @@ import "./home.css";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Dropdown from 'react-bootstrap/Dropdown';
-
+import { useNavigate } from 'react-router-dom';
+import Tables from '../../components/tables/Tables';
 
 const Home = () => {
+  const navigate = useNavigate();
+  const addUser = () => {
+    navigate("/register")
+  }
+
   return (
     <div className='home'>
       <div className="main_div">
@@ -22,23 +28,23 @@ const Home = () => {
             </Form>
           </div>
           <div className="add_btn">
-            <Button variant="primary"><i class="fa-solid fa-user-plus"></i>&nbsp;&nbsp;Add User</Button>
+            <Button variant="primary" onClick={addUser}><i class="fa-solid fa-user-plus"></i>&nbsp;&nbsp;Add User</Button>
           </div>
         </div>
         <div className="filter_div mt-5 d-flex justify-content-between flex-wrap">
-        <div >
-          <Dropdown >
-            <Dropdown.Toggle className="filter_new_old" id="dropdown-basic">
-            <i class="fa-solid fa-arrow-down-z-a"></i>&nbsp;
-            Short by Value
-            </Dropdown.Toggle>
-            <Dropdown.Menu>
-              <Dropdown.Item className='menu'>New to Old</Dropdown.Item>
-              <Dropdown.Item className='menu'>Old to New</Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
+          <div >
+            <Dropdown >
+              <Dropdown.Toggle className="filter_new_old" id="dropdown-basic">
+                <i class="fa-solid fa-arrow-down-z-a"></i>&nbsp;
+                Short by Value
+              </Dropdown.Toggle>
+              <Dropdown.Menu>
+                <Dropdown.Item className='menu'>New to Old</Dropdown.Item>
+                <Dropdown.Item className='menu'>Old to New</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
           </div>
-          
+
           <div className="filter">
             <h5>Filter By Gender</h5>
             <div className="gender d-flex justify-content-between" >
@@ -63,7 +69,7 @@ const Home = () => {
               />
             </div>
           </div>
-         
+
           <div className="filter">
             <h5>Filter By Status</h5>
             <div className="gender d-flex justify-content-between" >
@@ -92,6 +98,7 @@ const Home = () => {
             <Button className='export_btn'><i class="fa-solid fa-file-csv"></i>&nbsp;&nbsp;<span>Save to Excel File</span></Button>
           </div>
         </div>
+        <Tables />
       </div>
     </div>
   )

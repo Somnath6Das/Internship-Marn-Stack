@@ -1,0 +1,10 @@
+.container {margin-top: 20px;}
+
+.table {
+    background-color:  rgb(223, 62, 94);
+    font-size: 18px;
+}
+.tbody {
+    background-color: white;
+    color: black;
+}
