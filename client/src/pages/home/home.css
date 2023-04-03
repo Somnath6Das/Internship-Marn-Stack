@@ -9,8 +9,8 @@ Button {
 .add_btn i {
   font-size: 14px;
 }
-.filter_new_old {
-    margin-left: 124px;
+#dropdown-basic {
+  margin-left: 124px;
   background-color: rgb(17, 76, 187) !important;
 }
 .menu {
@@ -24,9 +24,11 @@ Button {
   background-color: rgb(17, 76, 187) !important;
 }
 .export_csv {
-    margin-right: 124px;
+  margin-right: 124px;
 }
 .export_csv i {
   font-size: 18px;
-  
+}
+.spinner {
+  margin-top: 6%;
 }

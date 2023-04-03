@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "./home.css";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { useNavigate } from 'react-router-dom';
 import Tables from '../../components/tables/Tables';
+import Spiner from './../../components/spiner/Spiner';
+
+
 
 const Home = () => {
+
+  const [ showSpinner, setShowSpinner ] = useState(true);
+
   const navigate = useNavigate();
   const addUser = () => {
     navigate("/register")
@@ -30,7 +36,7 @@ const Home = () => {
           <div className="add_btn">
             <Button variant="primary" onClick={addUser}><i class="fa-solid fa-user-plus"></i>&nbsp;&nbsp;Add User</Button>
           </div>
-        </div>
+        </div>   
         <div className="filter_div mt-5 d-flex justify-content-between flex-wrap">
           <div >
             <Dropdown >
@@ -98,7 +104,9 @@ const Home = () => {
             <Button className='export_btn'><i class="fa-solid fa-file-csv"></i>&nbsp;&nbsp;<span>Save to Excel File</span></Button>
           </div>
         </div>
-        <Tables />
+        <div className="spinner">
+          {showSpinner ? <Spiner /> : <Tables />}
+        </div>
       </div>
     </div>
   )
