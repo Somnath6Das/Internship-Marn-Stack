@@ -33,7 +33,7 @@ const Tables = () => {
                     <td>M</td>
                     <td className='d-flex align-items-center'>
                       <Dropdown >
-                        <Dropdown.Toggle className="filter_new_old" id="dropdown-basic1">
+                        <Dropdown.Toggle className="filter_new_old" id="dropdown-basic">
                           <Badge id="badge">
                             Active&nbsp;<i class="fa-sharp fa-solid fa-angle-down"></i>
                           </Badge>

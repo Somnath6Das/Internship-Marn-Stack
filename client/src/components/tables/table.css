@@ -9,9 +9,10 @@
     background-color: white;
     color: black;
 }
-#dropdown-basic1 {
+#dropdown-basic {
     background-color: white !important;
     color: black !important;
+    
     
 }
 .dropdown-toggle::after {
@@ -24,6 +25,7 @@
     color: white;
     font-size: 17px;
     font-weight: 200;
+   
 }
 #badge i {
     font-size: 15px;
@@ -39,6 +41,5 @@
     font-weight: 200;
 }
 #more i {
-   
-    font-size: 20px;
+    font-size: 30px;
 }

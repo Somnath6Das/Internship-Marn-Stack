@@ -1,12 +1,21 @@
-import React from 'react';
+import React,{useState, useEffect} from 'react';
 import "./profile.css";
 import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/esm/Row";
-
+import Spiner from './../../components/spiner/Spiner';
 
 const Profile = () => {
+  const [showSpinner, setShowSpinner] = useState(true);
+
+  useEffect(() => {  
+    setTimeout(() => {
+      setShowSpinner(false);
+    }, 1200)
+  }, [])
   return (
-    <div className='profile'>
+    <>
+     {showSpinner ? <div className="spinner" style={{marginTop:"15%"}}>
+      <Spiner /></div>:<div className='profile'>
       <div className="card-profile shadow col-lg-6 mx-auto mt-5">
         <Card>
           <Card.Body>
@@ -33,7 +42,9 @@ const Profile = () => {
           </Card.Body>
         </Card>
       </div>
-    </div>
+    </div>}
+    </>
+ 
   )
 }
 

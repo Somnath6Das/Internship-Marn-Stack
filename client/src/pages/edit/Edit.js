@@ -7,8 +7,14 @@ import Row from 'react-bootstrap/esm/Row';
 import Select from 'react-select';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Spiner from './../../components/spiner/Spiner';
+
 
 const Edit = () => {
+  const [showSpinner, setShowSpinner] = useState(true);
+
+  
+
   const [inputData, seInputData] = useState({
     fname: "",
     lname: "",
@@ -75,7 +81,7 @@ const Edit = () => {
     }
     else {
       toast.success("Data Submitted!");
-    
+
     }
   }
 
@@ -83,74 +89,81 @@ const Edit = () => {
     if (image) {
       setPreviewImage(URL.createObjectURL(image));
     }
+    setTimeout(() => {
+      setShowSpinner(false);
+    }, 1200)
   }, [image])
 
   return (
-    <div className='edit'>
-      <h2 className='text-center mt-1'>Update Details</h2>
-      <Card className='shadow mt-3 p-3'>
-        <div className="profile_div text-center">
-          <img src={previewImage ? previewImage : "/selfie.png"} alt="img" />
-        </div>
-        <Form>
-          <Row>
-            <Form.Group className="mb-3 col-lg-6" controlId="formBasicEmail">
-              <Form.Label>First name</Form.Label>
-              <Form.Control type="text" name='fname' value={inputData.fname} onChange={setInputValue} placeholder="Enter first name" />
-            </Form.Group>
-            <Form.Group className="mb-3 col-lg-6" controlId="formBasicEmail">
-              <Form.Label>Last name</Form.Label>
-              <Form.Control type="text" name='lname' value={inputData.lname} onChange={setInputValue} placeholder="Enter last name" />
-            </Form.Group>
-            <Form.Group className="mb-3 col-lg-6" controlId="formBasicEmail">
-              <Form.Label>Email address</Form.Label>
-              <Form.Control type="email" name='email' value={inputData.email} onChange={setInputValue} placeholder="Enter email" />
-            </Form.Group>
-            <Form.Group className="mb-3 col-lg-6" controlId="formBasicEmail">
-              <Form.Label>Mobile number</Form.Label>
-              <Form.Control type="text" name='mobile' value={inputData.mobile} onChange={setInputValue} placeholder="Enter mobile" />
-            </Form.Group>
-            <Form.Group className="mb-3 col-lg-6" controlId="formBasicEmail">
-              <Form.Label>Select Gender</Form.Label>
-              
-              <Form.Check
-                type={'radio'}
-                label={`Male`}
-                name="gender"
-                value={"Male"}
-                onChange={setInputValue}
-              />
-              <Form.Check
-                type={'radio'}
-                label={`Female`}
-                name="gender"
-                value={"Female"}
-                onChange={setInputValue}
-              />
-            </Form.Group>
-            <Form.Group className="mb-3 col-lg-6" controlId="formBasicEmail">
-              <Form.Label>User status</Form.Label>
+    <>
+      {showSpinner ? <div className="spinner" style={{marginTop:"15%"}}><Spiner className='mt-6%'/></div>
+       : <div className='edit'>
+        <h2 className='text-center mt-1'>Update Details</h2>
+        <Card className='shadow mt-3 p-3'>
+          <div className="profile_div text-center">
+            <img src={previewImage ? previewImage : "/selfie.png"} alt="img" />
+          </div>
+          <Form>
+            <Row>
+              <Form.Group className="mb-3 col-lg-6" controlId="formBasicEmail">
+                <Form.Label>First name</Form.Label>
+                <Form.Control type="text" name='fname' value={inputData.fname} onChange={setInputValue} placeholder="Enter first name" />
+              </Form.Group>
+              <Form.Group className="mb-3 col-lg-6" controlId="formBasicEmail">
+                <Form.Label>Last name</Form.Label>
+                <Form.Control type="text" name='lname' value={inputData.lname} onChange={setInputValue} placeholder="Enter last name" />
+              </Form.Group>
+              <Form.Group className="mb-3 col-lg-6" controlId="formBasicEmail">
+                <Form.Label>Email address</Form.Label>
+                <Form.Control type="email" name='email' value={inputData.email} onChange={setInputValue} placeholder="Enter email" />
+              </Form.Group>
+              <Form.Group className="mb-3 col-lg-6" controlId="formBasicEmail">
+                <Form.Label>Mobile number</Form.Label>
+                <Form.Control type="text" name='mobile' value={inputData.mobile} onChange={setInputValue} placeholder="Enter mobile" />
+              </Form.Group>
+              <Form.Group className="mb-3 col-lg-6" controlId="formBasicEmail">
+                <Form.Label>Select Gender</Form.Label>
 
-              <Select
-                options={options} value={status} onChange={setStatusValue}
-              />
-            </Form.Group>
-            <Form.Group className="mb-3 col-lg-6" controlId="formBasicEmail">
-              <Form.Label>Select profile picture</Form.Label>
-              <Form.Control type="file" onChange={setProfile} name='user_profile' placeholder="Select picture" />
-            </Form.Group>
-            <Form.Group className="mb-3 col-lg-6" controlId="formBasicEmail">
-              <Form.Label>Enter Address</Form.Label>
-              <Form.Control type="text" name='location' value={inputData.location} onChange={setInputValue} placeholder="Enter location" />
-            </Form.Group>
-            <Button variant="primary" type="submit" onClick={submitUserData}>
-              SUBMIT
-            </Button>
-          </Row>
-        </Form>
-      </Card>
-      <ToastContainer position="top-center" />
-    </div>
+                <Form.Check
+                  type={'radio'}
+                  label={`Male`}
+                  name="gender"
+                  value={"Male"}
+                  onChange={setInputValue}
+                />
+                <Form.Check
+                  type={'radio'}
+                  label={`Female`}
+                  name="gender"
+                  value={"Female"}
+                  onChange={setInputValue}
+                />
+              </Form.Group>
+              <Form.Group className="mb-3 col-lg-6" controlId="formBasicEmail">
+                <Form.Label>User status</Form.Label>
+
+                <Select
+                  options={options} value={status} onChange={setStatusValue}
+                />
+              </Form.Group>
+              <Form.Group className="mb-3 col-lg-6" controlId="formBasicEmail">
+                <Form.Label>Select profile picture</Form.Label>
+                <Form.Control type="file" onChange={setProfile} name='user_profile' placeholder="Select picture" />
+              </Form.Group>
+              <Form.Group className="mb-3 col-lg-6" controlId="formBasicEmail">
+                <Form.Label>Enter Address</Form.Label>
+                <Form.Control type="text" name='location' value={inputData.location} onChange={setInputValue} placeholder="Enter location" />
+              </Form.Group>
+              <Button variant="primary" type="submit" onClick={submitUserData}>
+                SUBMIT
+              </Button>
+            </Row>
+          </Form>
+        </Card>
+        <ToastContainer position="top-center" />
+      </div>}
+
+    </>
   )
 }
 

@@ -7,9 +7,10 @@ import Row from 'react-bootstrap/esm/Row';
 import Select from 'react-select';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import Spiner from './../../components/spiner/Spiner';
 
 const Register = () => {
+  const [showSpinner, setShowSpinner] = useState(true);
   const [inputData, seInputData] = useState({
     fname: "",
     lname: "",
@@ -84,11 +85,15 @@ const Register = () => {
     if (image) {
       setPreviewImage(URL.createObjectURL(image));
     }
+    setTimeout(() => {
+      setShowSpinner(false);
+    }, 1200)
   }, [image])
 
 
   return (
-    <div className="register">
+    <>
+    {showSpinner ? <div className="spinner" style={{marginTop:"15%"}}><Spiner/></div>:<div className="register">
 
       <h2 className='text-center mt-1'>Register Details</h2>
       <Card className='shadow mt-3 p-3'>
@@ -153,7 +158,9 @@ const Register = () => {
         </Form>
       </Card>
       <ToastContainer position="top-center" />
-    </div>
+    </div>}
+    
+    </>
   )
 }
 
