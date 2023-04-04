@@ -47,7 +47,7 @@ const Home = () => {
           <div className="filter_div mt-5 d-flex justify-content-between flex-wrap">
             <div >
               <Dropdown >
-                <Dropdown.Toggle className="filter_new_old" id="dropdown-basics">
+                <Dropdown.Toggle className="filter_new_old" id="dropdown-basics1">
                   <i class="fa-solid fa-arrow-down-z-a"></i>&nbsp;
                   Short by Value
                 </Dropdown.Toggle>

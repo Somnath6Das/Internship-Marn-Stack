@@ -31,13 +31,48 @@ const Tables = () => {
                     <td>Somnath Das</td>
                     <td>somnath8das@gmail.com</td>
                     <td>M</td>
-                    <td className='d-flex align-items-center'>
-                      <Dropdown >
+                    <td className='align-align-items-center'>
+                      <Dropdown id="drp-itm">
                         <Dropdown.Toggle className="filter_new_old" id="dropdown-basic">
                           <Badge id="badge">
                             Active&nbsp;<i class="fa-sharp fa-solid fa-angle-down"></i>
                           </Badge>
-
+                        </Dropdown.Toggle>
+                        <Dropdown.Menu>
+                          <Dropdown.Item className='menu'>Active</Dropdown.Item>
+                          <Dropdown.Item className='menu'>Inactive</Dropdown.Item>
+                        </Dropdown.Menu>
+                      </Dropdown>
+                    </td>
+                    <td className='img_parent'>
+                      <img src="/selfie.png" style={{ width: "40px" }} alt="" />
+                    </td>
+                    <Dropdown >
+                        <Dropdown.Toggle id="dropdown-basic">
+                          
+                             <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </Dropdown.Toggle>
+                        <Dropdown.Menu>
+                          <Dropdown.Item >View</Dropdown.Item>
+                          <Dropdown.Item >Profile</Dropdown.Item>
+                          <Dropdown.Item >Delete</Dropdown.Item>
+                        </Dropdown.Menu>
+                      </Dropdown>
+                  
+                  </tr>
+                </tbody>
+                <tbody className='tbody'>
+                  <tr>
+                    <td>1</td>
+                    <td>Somnath Das</td>
+                    <td>somnath8das@gmail.com</td>
+                    <td>M</td>
+                    <td className='align-align-items-center'>
+                      <Dropdown id="drp-itm">
+                        <Dropdown.Toggle className="filter_new_old" id="dropdown-basic">
+                          <Badge id="badge">
+                            Active&nbsp;<i class="fa-sharp fa-solid fa-angle-down"></i>
+                          </Badge>
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
                           <Dropdown.Item className='menu'>Active</Dropdown.Item>

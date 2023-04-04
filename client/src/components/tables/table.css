@@ -2,14 +2,18 @@
 
 #table1 {
     color: crimson;
-    font-size: 18px;
+    font-size: 23px;
     font-weight: 200;
 }
 .tbody {
     background-color: white;
     color: black;
+    align-items: center !important;
+    font-size: 20px;
 }
 #dropdown-basic {
+    justify-content: center !important;
+    align-items: center !important;
     background-color: white !important;
     color: black !important;
     
@@ -41,5 +45,5 @@
     font-weight: 200;
 }
 #more i {
-    font-size: 30px;
+    font-size: 50px;
 }
