@@ -4,4 +4,4 @@ const userpost = (req, res) => {
  console.log(req.file);
 }
 
-export {userpost};
+export default userpost;
