@@ -35,7 +35,7 @@ const Tables = () => {
                       <Dropdown id="drp-itm">
                         <Dropdown.Toggle className="filter_new_old" id="dropdown-basic">
                           <Badge id="badge">
-                            Active&nbsp;<i class="fa-sharp fa-solid fa-angle-down"></i>
+                            Active&nbsp;<i className="fa-sharp fa-solid fa-angle-down"></i>
                           </Badge>
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
@@ -50,7 +50,7 @@ const Tables = () => {
                     <Dropdown >
                         <Dropdown.Toggle id="dropdown-basic">
                           
-                             <i class="fa-solid fa-ellipsis-vertical"></i>
+                             <i className="fa-solid fa-ellipsis-vertical"></i>
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
                           <Dropdown.Item >View</Dropdown.Item>
@@ -71,7 +71,7 @@ const Tables = () => {
                       <Dropdown id="drp-itm">
                         <Dropdown.Toggle className="filter_new_old" id="dropdown-basic">
                           <Badge id="badge">
-                            Active&nbsp;<i class="fa-sharp fa-solid fa-angle-down"></i>
+                            Active&nbsp;<i className="fa-sharp fa-solid fa-angle-down"></i>
                           </Badge>
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
@@ -85,7 +85,7 @@ const Tables = () => {
                     </td>
                     <Dropdown >
                         <Dropdown.Toggle id="dropdown-basic">                      
-                             <i class="fa-solid fa-ellipsis-vertical"></i>
+                             <i className="fa-solid fa-ellipsis-vertical"></i>
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
                           <Dropdown.Item >View</Dropdown.Item>

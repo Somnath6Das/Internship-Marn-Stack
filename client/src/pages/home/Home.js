@@ -37,18 +37,18 @@ const Home = () => {
                   className="me-2"
                   aria-label="Search"
                 />
-                <Button variant="outline-success"><i class="fa-solid fa-magnifying-glass"></i></Button>
+                <Button variant="outline-success"><i className="fa-solid fa-magnifying-glass"></i></Button>
               </Form>
             </div>
             <div className="add_btn">
-              <Button variant="primary" onClick={addUser}><i class="fa-solid fa-user-plus"></i>&nbsp;&nbsp;Add User</Button>
+              <Button variant="primary" onClick={addUser}><i className="fa-solid fa-user-plus"></i>&nbsp;&nbsp;Add User</Button>
             </div>
           </div>
           <div className="filter_div mt-5 d-flex justify-content-between flex-wrap">
             <div >
               <Dropdown >
                 <Dropdown.Toggle className="filter_new_old" id="dropdown-basics1">
-                  <i class="fa-solid fa-arrow-down-z-a"></i>&nbsp;
+                  <i className="fa-solid fa-arrow-down-z-a"></i>&nbsp;
                   Short by Value
                 </Dropdown.Toggle>
                 <Dropdown.Menu>
@@ -108,13 +108,15 @@ const Home = () => {
               </div>
             </div>
             <div className="export_csv">
-              <Button className='export_btn'><i class="fa-solid fa-file-csv"></i>&nbsp;&nbsp;<span>Save to Excel File</span></Button>
+              <Button className='export_btn'><i className="fa-solid fa-file-csv"></i>&nbsp;&nbsp;<span>Save to Excel File</span></Button>
             </div>
           </div>
 
           <Tables />
         </div>
       </div>}
+
+
     </>
 
   );

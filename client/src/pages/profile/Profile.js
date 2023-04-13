@@ -28,15 +28,15 @@ const Profile = () => {
             </Row>
             <div className="text-center">
               <h3>Somnath Das</h3>
-              <h4><i class="fa-solid fa-at"></i>&nbsp; <span>somnath8das@gmail.com</span></h4>
-              <h4><i class="fa-solid fa-mobile-screen-button"></i>&nbsp; <span>9681271004</span></h4>
+              <h4><i className="fa-solid fa-at"></i>&nbsp; <span>somnath8das@gmail.com</span></h4>
+              <h4><i className="fa-solid fa-mobile-screen-button"></i>&nbsp; <span>9681271004</span></h4>
               <div className="profileInfo">
-                <h4><i class="fa-solid fa-user"></i>&nbsp; <span>Male</span></h4>
-                <h4><i class="fa-solid fa-location-arrow"></i>&nbsp; <span>Kolkata</span></h4>
-                <h4><i class="fa-solid fa-bolt"></i>&nbsp; <span>Active</span></h4></div>
+                <h4><i className="fa-solid fa-user"></i>&nbsp; <span>Male</span></h4>
+                <h4><i className="fa-solid fa-location-arrow"></i>&nbsp; <span>Kolkata</span></h4>
+                <h4><i className="fa-solid fa-bolt"></i>&nbsp; <span>Active</span></h4></div>
               <div className="profileInfo1">
-                <h4><i class="fa-regular fa-calendar-plus"></i>&nbsp; <span>created: 1-1-23</span></h4>
-                <h4><i class="fa-regular fa-calendar-check"></i>&nbsp; <span>updated: 31-12-23</span></h4>
+                <h4><i className="fa-regular fa-calendar-plus"></i>&nbsp; <span>created: 1-1-23</span></h4>
+                <h4><i className="fa-regular fa-calendar-check"></i>&nbsp; <span>updated: 31-12-23</span></h4>
               </div>
             </div>
           </Card.Body>

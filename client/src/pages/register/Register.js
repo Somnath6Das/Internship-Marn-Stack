@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect} from 'react';
 import "./register.css";
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
@@ -8,6 +8,7 @@ import Select from 'react-select';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Spiner from './../../components/spiner/Spiner';
+import { useNavigate } from 'react-router-dom';
 import { registerFunc } from '../../services/Apis';
 
 
@@ -26,6 +27,8 @@ const Register = () => {
   const [status, setStatus] = useState("Active");
   const [image, setImage] = useState("");
   const [previewImage, setPreviewImage] = useState("");
+
+  const navigate = useNavigate();
   // status options
   const options = [
     { value: 'Active', label: 'Active' },
@@ -92,9 +95,23 @@ const Register = () => {
       const config = {
         "Content-Type": "multipart/form-data"
       }
+      // api call 
       const response = await registerFunc(data, config);
-      console.log(response);
-      // toast.success("Data Submitted!");
+
+      if(response.status === 200) {
+        seInputData({
+          ...inputData,
+          fname:"", lname:"", email:"", mobile:"", gender:"", location:""
+        });
+        setStatus("");
+        setPreviewImage("");
+        toast.success("Data Submitted!");
+        navigate("/")
+      }else {
+        toast.error("form is not submitted!")
+      }
+      // console.log(response);
+      
 
     }
   }
