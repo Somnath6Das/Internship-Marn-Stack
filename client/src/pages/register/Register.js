@@ -8,6 +8,8 @@ import Select from 'react-select';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Spiner from './../../components/spiner/Spiner';
+import { registerFunc } from '../../services/Apis';
+
 
 const Register = () => {
   const [showSpinner, setShowSpinner] = useState(true);
@@ -76,7 +78,23 @@ const Register = () => {
       toast.error("Location is required!")
     }
     else {
-      toast.success("Data Submitted!");
+      const data = new FormData();
+
+      data.append("fname", fname);
+      data.append("lname", lname); 
+      data.append("email", email);
+      data.append("mobile", mobile);
+      data.append("gender", gender);
+      data.append("status", status);
+      data.append("user_profile", image);
+      data.append("location", location); 
+   
+      const config = {
+        "Content-Type": "multipart/form-data"
+      }
+      const response = await registerFunc(data, config);
+      console.log(response);
+      // toast.success("Data Submitted!");
 
     }
   }
@@ -138,9 +156,8 @@ const Register = () => {
             </Form.Group>
             <Form.Group className="mb-3 col-lg-6" controlId="formBasicEmail">
               <Form.Label>User status</Form.Label>
-
               <Select
-                options={options} value={status} onChange={setStatusValue}
+                options={options} onChange={setStatusValue}
               />
             </Form.Group>
             <Form.Group className="mb-3 col-lg-6" controlId="formBasicEmail">
