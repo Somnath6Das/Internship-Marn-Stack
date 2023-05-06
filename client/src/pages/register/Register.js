@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect, useContext} from 'react';
 import "./register.css";
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
@@ -10,6 +10,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Spiner from './../../components/spiner/Spiner';
 import { useNavigate } from 'react-router-dom';
 import { registerFunc } from '../../services/Apis';
+import { addData } from '../../components/context/ContextProvider';
 
 
 const Register = () => {
@@ -29,6 +30,9 @@ const Register = () => {
   const [previewImage, setPreviewImage] = useState("");
 
   const navigate = useNavigate();
+
+  const {userAdd, setUserAdd} = useContext(addData);
+
   // status options
   const options = [
     { value: 'Active', label: 'Active' },
@@ -105,6 +109,8 @@ const Register = () => {
         });
         setStatus("");
         setPreviewImage("");
+        // context provider.
+        setUserAdd(response.data);
         toast.success("Data Submitted!");
         navigate("/")
       }else {
